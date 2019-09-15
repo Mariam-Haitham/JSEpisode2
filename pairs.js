@@ -19,6 +19,50 @@
 ****************************************************************/
 function pairs(names) {
   // Your code goes here
+  if(!names || names.length == 0)
+    return [];
+
+  let ans = [];
+
+  if(names.length % 2 == 0)
+  {
+    while(names.length > 0)
+    {
+        
+        let random1 = names.getRandom();
+        let random2 = names.getRandom();
+  
+        let temp = [random1, random2];
+        ans.push(temp);
+  
+        
+    }
+  }
+  else
+  {
+    
+    let l = names.length - 1;
+
+    while(l > 0)
+    {
+        
+        let random1 = names.getRandom();
+        let random2 = names.getRandom();
+  
+        let temp = [random1, random2];
+        ans.push(temp);
+  
+        l = l-2;
+    }
+
+    let temp = [names.getRandom()]
+    ans.push(temp)
+
+
+  }
+  
+  return ans;
+  
 }
 
 module.exports = pairs;
@@ -41,4 +85,4 @@ Array.prototype.getRandom = function () {
   return this.splice(Math.floor(Math.random()*this.length), 1)[0];
 }
 
-console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein', 'Lailz', 'Mr Potato']));
+console.log(pairs(['Asis', 'Hamsa', 'Fawas']));
